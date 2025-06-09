@@ -1,0 +1,372 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Jack Pescados - Caça ao Tesouro Gastronômico</title>
+  <link href="https://fonts.googleapis.com/css2?family=Pirata+One&family=Open+Sans&display=swap" rel="stylesheet" />
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"></script>
+  <style>
+    body {
+      background: linear-gradient(#031926, #124559);
+      font-family: 'Open Sans', sans-serif;
+    }
+    h1, h2, h3, .pirata-font {
+      font-family: 'Pirata One', cursive;
+    }
+    .mapa-fundo {
+      background-image: url('https://th.bing.com/th/id/OIP.LxbRbFRJAQ70f_XIWNCzaAHaHa?w=176&h=180&c=7&r=0&o=7&pid=1.7&rm=3');
+      background-size: cover;
+      background-position: center;
+    }
+    .blur-bg {
+      background: rgba(255, 255, 255, 0.07);
+      backdrop-filter: blur(8px);
+      padding: 1rem;
+      border-radius: 1rem;
+    }
+    .img-cardapio, .img-experiencia, .img-sobre, .img-contato {
+      border-radius: 0.75rem;
+      object-fit: cover;
+      width: 100%;
+      max-height: 200px;
+      margin-bottom: 1rem;
+    }
+.dark-mode {
+      background: linear-gradient(#ffffff, #e3e3e3);
+      color: black;
+    }
+  </style>
+</head>
+<body class="text-white scroll-smooth">
+
+  <!-- Botão de Modo Escuro -->
+  <button onclick="toggleDarkMode()" class="fixed top-6 right-6 bg-yellow-400 text-black py-2 px-4 rounded-full font-bold">Modo Claro/Escuro</button>
+  </style>
+    }
+</head>
+<body class="text-white scroll-smooth">
+
+  <!-- Cabeçalho -->
+   <header class="bg-[#0a2f43] py-6 shadow-xl fixed top-0 w-full z-50">
+    <div class="container mx-auto flex justify-between items-center px-6">
+      <h1 class="text-3xl pirata-font text-yellow-400">Jack Pescados</h1>
+      <nav class="space-x-4 text-white">
+        <a href="#sobre" class="hover:text-yellow-400 transition">Sobre</a>
+        <a href="#cardapio" class="hover:text-yellow-400 transition">Cardápio</a>
+        <a href="#experiencia" class="hover:text-yellow-400 transition">Experiência</a>
+        <a href="#reserva" class="hover:text-yellow-400 transition">Reserva</a>
+        <a href="#contato" class="hover:text-yellow-400 transition">Contato</a>
+      </nav>
+    </div>
+  </header>
+
+  <!-- Hero Section -->
+  <section class="h-screen flex items-center justify-center mapa-fundo text-center px-6" id="home" style="padding-top: 5rem;">
+    <div class="backdrop-blur-md p-10 rounded-xl bg-black/50 max-w-xl">
+      <h2 class="text-5xl pirata-font text-yellow-400 animate-bounce">VENHA CAÇAR SEU TESOURO</h2>
+      <p class="mt-4 text-xl">Uma aventura gastronômica entre os sete mares</p>
+      <a href="#cardapio" class="mt-8 inline-block bg-yellow-400 text-black font-bold py-3 px-6 rounded-full hover:bg-yellow-300 transition">Ver Cardápio</a>
+    </div>
+  </section>
+  <!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Caça ao Tesouro Pirata</title>
+  <link href="https://fonts.googleapis.com/css2?family=Pirata+One&family=Open+Sans&display=swap" rel="stylesheet">
+  <style>
+    body {
+      background: linear-gradient(#031926, #124559);
+      font-family: 'Open Sans', sans-serif;
+      color: white;
+      text-align: center;
+    }
+    .pirata-font {
+      font-family: 'Pirata One', cursive;
+    }
+    .button-container {
+      display: flex;
+      justify-content: center;
+      gap: 1rem;
+      flex-wrap: wrap;
+    }
+    .btn {
+      background: gold;
+      color: black;
+      font-weight: bold;
+      padding: 1rem 2rem;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+      transition: 0.3s;
+    }
+    .btn:hover {
+      background: darkgoldenrod;
+    }
+    #resultado {
+      margin-top: 1rem;
+      font-weight: bold;
+      font-size: 1.2rem;
+    }
+  </style>
+</head>
+<body>
+
+  <h1 class="pirata-font">🏴‍☠️ Caça ao Tesouro Pirata 🏴‍☠️</h1>
+  <p>Escolha um dos locais para encontrar seu tesouro escondido:</p>
+
+  <div class="button-container">
+    <button class="btn" onclick="buscarTesouro('ilha')">Explorar a Ilha 🌴</button>
+    <button class="btn" onclick="buscarTesouro('navio')">Vasculhar o Navio 🚢</button>
+    <button class="btn" onclick="buscarTesouro('caverna')">Entrar na Caverna ⛰️</button>
+  </div>
+
+  <p id="resultado"></p>
+
+  <script>
+    function buscarTesouro(local) {
+      let resultados = {
+        ilha: ["🏴‍☠️ Você encontrou um mapa antigo!", "🪙 Você achou 500 pontos!", "💀 Um pirata roubou seu tesouro!"],
+        navio: ["⚓ Você descobriu um baú cheio de ouro!", "📜 Ganhou um código especial para desconto!", "🐙 O Kraken afundou seu barco!"],
+        caverna: ["💎 Encontrou uma joia rara!", "🎭 Um mistério te aguarda... tente de novo!", "🔥 Armadilha! Perdeu pontos!"]
+      };
+
+      let sorteio = Math.floor(Math.random() * resultados[local].length);
+      document.getElementById("resultado").innerText = resultados[local][sorteio];
+    }
+  </script>
+
+</body>
+</html>
+
+ <!-- Depoimentos -->
+  <section id="depoimentos" class="py-20 px-6 bg-[#124559] text-center">
+    <h2 class="text-4xl pirata-font text-yellow-400 mb-6">O que dizem sobre nós</h2>
+    <div class="grid md:grid-cols-2 gap-6 max-w-5xl mx-auto">
+      <div class="blur-bg p-6 text-left">
+        <p class="italic">"A experiência é incrível! Ambiente totalmente imersivo e a comida impecável!"</p>
+        <span class="block mt-2 font-bold">- Sofia M.</span>
+      </div>
+      <div class="blur-bg p-6 text-left">
+        <p class="italic">"Melhor polvo que já provei! O atendimento também é de outro nível!"</p>
+        <span class="block mt-2 font-bold">- Carlos R.</span>
+      </div>
+    </div>
+  </section>
+<!-- Perguntas Frequentes -->
+  <section id="faq" class="py-20 px-6 bg-[#0a2f43] text-center">
+    <h2 class="text-4xl pirata-font text-yellow-400 mb-6">Perguntas Frequentes</h2>
+    <div class="max-w-4xl mx-auto text-lg">
+      <p><strong>📌 Preciso reservar antes?</strong><br>Sim! Nossa experiência é exclusiva, então recomendamos reservar com antecedência.</p>
+      <p class="mt-4"><strong>🌱 Há opções veganas?</strong><br>Sim! Temos pratos incríveis como o Tesouro Vegano e rodízios especiais.</p>
+      <p class="mt-4"><strong>🎉 Há eventos especiais?</strong><br>Sim! Temos noites temáticas, degustações e até desafios piratas.</p>
+    </div>
+  </section>
+ <!-- Pedido Online -->
+  <section id="pedido" class="py-20 px-6 bg-[#124559] text-center">
+    <h2 class="text-4xl pirata-font text-yellow-400 mb-6">Peça Online</h2>
+  
+    <a href="https://wa.me/48912345678" class="mt-4 bg-green-500 text-white py-3 px-6 rounded-full font-bold hover:bg-green-400 transition">
+Pedir no WhatsApp</a>
+  </section>
+
+  <!-- Ranking de Clientes -->
+  <section id="ranking" class="py-20 px-6 bg-[#0a2f43] text-center">
+    <h2 class="text-4xl pirata-font text-yellow-400 mb-6">Quadro dos Piratas</h2>
+    <p>Os clientes mais frequentes do Jack Pescados:</p>
+    <ul class="mt-4 text-yellow-300 font-bold">
+      <li>🏴‍☠️ Pedro - 15 visitas</li>
+      <li>🏴‍☠️ Maria - 12 visitas</li>
+      <li>🏴‍☠️ João - 10 visitas</li>
+    </ul>
+  </section>
+
+   <!-- Blog Gastronômico aprimorado -->
+  <section id="blog" class="py-20 px-6 bg-[#124559] text-center blog-section">
+    <h2 class="text-4xl pirata-font text-yellow-400 mb-6">Blog Gastronômico</h2>
+  
+    <div class="blog-buttons">
+      <a href="#" class="bg-yellow-400 text-black py-3 px-6 rounded-full font-bold hover:bg-yellow-300 transition">Receitas</a>
+      <a href="#" class="bg-yellow-400 text-black py-3 px-6 rounded-full font-bold hover:bg-yellow-300 transition">Curiosidades</a>
+      <a href="#" class="bg-yellow-400 text-black py-3 px-6 rounded-full font-bold hover:bg-yellow-300 transition">Eventos</a>
+    </div>
+  </section>
+
+  <!-- Sobre -->
+  <section id="sobre" class="py-20 px-6 bg-[#06212f] text-center max-w-6xl mx-auto">
+    <h2 class="text-4xl pirata-font text-yellow-400 mb-6">Sobre o Restaurante</h2>
+    <img
+      src="https://th.bing.com/th/id/OIP.jkOi3NE8zaKFWTY9TC2m-AHaE7?w=263&h=180&c=7&r=0&o=7&pid=1.7&rm=3"
+      alt="Ambiente do restaurante Jack Pescados"
+      class="img-sobre mx-auto mb-8"
+    />
+    <div class="max-w-4xl mx-auto text-lg space-y-4">
+      <p>Localizado em Santo Antônio de Lisboa, Florianópolis, o Jack Pescados é um restaurante temático que combina frutos do mar frescos, opções veganas e sustentabilidade em um ambiente imersivo inspirado na pirataria.</p>
+      <p>Com cardápio criativo e apresentações instagramáveis, o restaurante proporciona experiências únicas como o "Banquete do Kraken", jantares à luz de velas e eventos interativos para toda a família.</p>
+      <p>Nosso espaço é pensado para encantar desde crianças com o Kit Pirata até adultos com drinks especiais como o Rum do Capitão e a Brisa do Caribe.</p>
+    </div>
+  </section>
+
+  <!-- Cardápio (destaques + animação) -->
+  <section id="cardapio" class="py-20 px-6 bg-[#0a2f43] max-w-7xl mx-auto">
+    <h2 class="text-4xl pirata-font text-yellow-400 text-center mb-10">Tesouros do Cardápio</h2>
+    <div class="flex justify-center mb-10">
+      <lottie-player
+        src="https://assets10.lottiefiles.com/packages/lf20_cdnk4z8e.json"
+        background="transparent"
+        speed="1"
+        style="width: 300px; height: 300px;"
+        loop
+        autoplay
+      ></lottie-player>
+    </div>
+    <div class="grid md:grid-cols-3 gap-10">
+      <div class="blur-bg p-6 rounded-xl shadow-xl flex flex-col items-center">
+        <img
+          src="https://th.bing.com/th/id/OIP.CznMy0Ama12iKSn9PyDsrgHaCx?w=310&h=131&c=7&r=0&o=7&pid=1.7&rm=3"
+          alt="Baú do Pirata - lula empanada e camarão"
+          class="img-cardapio"
+        />
+        <h3 class="pirata-font text-2xl text-yellow-300">Baú do Pirata</h3>
+        <p class="text-center">Mix de lula empanada, camarões ao alho e fritas rústicas em tábua temática.</p>
+        <span class="block mt-2 font-bold">R$ 260</span>
+      </div>
+      <div class="blur-bg p-6 rounded-xl shadow-xl flex flex-col items-center">
+        <img
+          src="data:image/webp;base64,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"
+          alt="Polvo das Profundezas - polvo grelhado"
+          class="img-cardapio"
+        />
+        <h3 class="pirata-font text-2xl text-yellow-300">Polvo das Profundezas</h3>
+        <p class="text-center">Tentáculos grelhados com batatas, alho confitado e azeite de páprica.</p>
+        <span class="block mt-2 font-bold">R$ 175</span>
+      </div>
+      <div class="blur-bg p-6 rounded-xl shadow-xl flex flex-col items-center">
+        <img
+          src="https://images.unsplash.com/photo-1546069901-ba9599a7e63c?auto=format&fit=crop&w=400&q=80"
+          alt="Tesouro Vegano - croquetes de lentilha e alga"
+          class="img-cardapio"
+        />
+        <h3 class="pirata-font text-2xl text-yellow-300">Tesouro Vegano</h3>
+        <p class="text-center">Bandeja vegana com croquetes de lentilha e alga, chips e molhos especiais.</p>
+        <span class="block mt-2 font-bold">R$ 240</span>
+      </div>
+    </div>
+    <div class="text-center mt-10">
+      <a href="#" class="underline text-yellow-300 hover:text-yellow-400">Ver Cardápio Completo (PDF)</a>
+    </div>
+  </section>
+
+  <!-- Experiência -->
+  <section id="experiencia" class="py-20 px-6 bg-[#124559] text-center max-w-6xl mx-auto">
+    <h2 class="text-4xl pirata-font text-yellow-400 mb-6">A Experiência</h2>
+    <div class="grid md:grid-cols-2 gap-10 max-w-4xl mx-auto text-lg">
+      <div>
+        <img
+          src="https://images.unsplash.com/photo-1498654896293-37aacf113fd9?auto=format&fit=crop&w=600&q=80"
+          alt="Jantar temático"
+          class="img-experiencia"
+        />
+        <p>Jantares temáticos como "Degustação do Capitão" e "Banquete do Kraken".</p>
+      </div>
+      <div>
+        <img
+          src="https://th.bing.com/th/id/OIP.bOK3Lc66pNsl3XLI24yjOQHaE8?w=295&h=197&c=7&r=0&o=7&pid=1.7&rm=3"
+          alt="Evento com música ao vivo"
+          class="img-experiencia"
+        />
+        <p>Rodízios veganos, degustações com chefs convidados e noites com música ao vivo.</p>
+      </div>
+      <div>
+        <img
+          src="https://th.bing.com/th/id/OIP.L9UHWMl9ZsZ338YPOwQntgHaE8?w=260&h=189&c=7&r=0&o=7&pid=1.7&rm=3"
+          alt="Decoração temática pirata"
+          class="img-experiencia"
+        />
+        <p>Kit Pirata para crianças, decoração imersiva, sons do mar e iluminação náutica.</p>
+      </div>
+      <div>
+        <img
+          src="https://th.bing.com/th/id/OIP.9wRMxlRL29OpOW7AklSNbAHaFX?r=0&pid=ImgDet&w=191&h=138&c=7"
+          alt="Loja do Capitão"
+          class="img-experiencia"
+        />
+        <p>Loja do Capitão com souvenirs, camisetas e molhos exclusivos.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Reserva -->
+  <section id="reserva" class="py-20 px-6 bg-[#0a2f43] text-center max-w-xl mx-auto rounded-xl blur-bg">
+    <h2 class="text-4xl pirata-font text-yellow-400 mb-6">Faça sua Reserva</h2>
+    <form class="space-y-4">
+      <input type="text" placeholder="Nome" class="w-full p-3 rounded-md text-black" required />
+      <input type="email" placeholder="E-mail" class="w-full p-3 rounded-md text-black" required />
+      <input type="tel" placeholder="Telefone" class="w-full p-3 rounded-md text-black" />
+      <input type="date" class="w-full p-3 rounded-md text-black" required />
+      <input type="number" placeholder="Número de pessoas" class="w-full p-3 rounded-md text-black" required />
+      <textarea placeholder="Mensagem ou pedido especial" class="w-full p-3 rounded-md text-black"></textarea>
+      <button class="bg-yellow-400 text-black font-bold py-3 px-6 rounded-full hover:bg-yellow-300 transition">Enviar Reserva</button>
+    </form>
+  </section>
+ 
+
+  <!-- Contato -->
+  <section id="contato" class="py-20 px-6 bg-[#06212f] text-center max-w-4xl mx-auto rounded-xl blur-bg">
+    <h2 class="text-4xl pirata-font text-yellow-400 mb-6">Contato e Localização</h2>
+    <img
+      src="https://visitefloripa.com.br/wp-content/uploads/2023/05/Praia-de-Santo-Antonio-de-Lisboa-2_SITE-scaled.jpg"
+      alt="Vista de Santo Antônio de Lisboa"
+      class="img-contato mx-auto mb-6"
+    />
+    <p class="mb-2">📍 Santo Antônio de Lisboa – Florianópolis, SC</p>
+    <p class="mb-2">📞 (48) 91234-5678</p>
+    <p class="mb-2">📧 contato@jackpescados.com</p>
+    <div class="mt-6">
+      <iframe
+        class="w-full max-w-2xl h-72 mx-auto rounded-xl"
+        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3524.754770451677!2d-48.516947!3d-27.500969!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xbdd88093ed3a47d%3A0xc01c8ca8a3f44f92!2sSanto%20Ant%C3%B4nio%20de%20Lisboa%2C%20Florian%C3%B3polis%20-%20SC!5e0!3m2!1spt-BR!2sbr!4v1686400000000!5m2!1spt-BR!2sbr"
+        style="border:0;"
+        allowfullscreen=""
+        loading="lazy"
+        referrerpolicy="no-referrer-when-downgrade"
+      ></iframe>
+    </div>
+  </section>
+<!-- Seção de Compartilhamento -->
+  <section id="compartilhar" class="py-20 px-6 bg-[#124559] text-center">
+    <h2 class="text-4xl pirata-font text-yellow-400 mb-6">Compartilhe essa Experiência!</h2>
+    <div class="flex justify-center gap-4">
+      <a href="https://www.facebook.com/sharer/sharer.php?u=jackpescados.com" target="_blank" class="bg-blue-600 text-white py-2 px-4 rounded-full">Facebook</a>
+      <a href="https://www.instagram.com/jackpescados" target="_blank" class="bg-pink-500 text-white py-2 px-4 rounded-full">Instagram</a>
+      <a href="https://wa.me/?text=Confira%20o%20restaurante%20Jack%20Pescados!" target="_blank" class="bg-green-500 text-white py-2 px-4 rounded-full">WhatsApp</a>
+    </div>
+  </section>
+
+  <!-- Avaliações -->
+  <section id="avaliacoes" class="py-20 px-6 bg-[#0a2f43] text-center">
+    <h2 class="text-4xl pirata-font text-yellow-400 mb-6">Deixe sua Avaliação</h2>
+    <form class="max-w-xl mx-auto space-y-4">
+      <input type="text" placeholder="Seu Nome" class="w-full p-3 rounded-md text-black" required />
+      <textarea placeholder="Deixe seu comentário" class="w-full p-3 rounded-md text-black" required></textarea>
+      <button class="bg-yellow-400 text-black font-bold py-3 px-6 rounded-full hover:bg-yellow-300 transition">Enviar Avaliação</button>
+    </form>
+  </section>
+
+  <!-- Newsletter -->
+  <section id="newsletter" class="py-20 px-6 bg-[#124559] text-center">
+    <h2 class="text-4xl pirata-font text-yellow-400 mb-6">Receba Cupons e Promoções!</h2>
+    <form class="max-w-xl mx-auto space-y-4">
+      <input type="email" placeholder="Seu E-mail" class="w-full p-3 rounded-md text-black" required />
+      <button class="bg-yellow-400 text-black font-bold py-3 px-6 rounded-full hover:bg-yellow-300 transition">Inscrever-se</button>
+    </form>
+  </section>
+
+  <footer class="bg-[#031926] py-6 text-center text-yellow-400 text-sm">
+    &copy; 2025 Jack Pescados - Todos os direitos reservados
+  </footer>
+</body>
+</html>
